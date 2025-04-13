@@ -33,6 +33,7 @@ return {
     },
     config = function()
       -- See `:help lsp-vs-treesitter`
+      local lspconfig = require('lspconfig')
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
@@ -139,6 +140,8 @@ return {
         pyright = {},
         rust_analyzer = {},
         ts_ls = {},
+        tailwindcss = {},
+        jsonls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
         lua_ls = {
@@ -184,6 +187,9 @@ return {
             require('lspconfig')[server_name].setup(server)
           end,
         },
+      })
+      lspconfig.sourcekit.setup({
+        -- root_dir = lspconfig.util.root_pattern('.git', 'Package.swift', 'compile_commands.json'),
       })
     end,
   },
