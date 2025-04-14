@@ -1,3 +1,4 @@
 #!/bin/bash
 cp -r ~/.config/nvim/** ./nvim/
-cp -r ~/.wezterm.lua ./wezterm/wezterm.lua
+cp ~/.wezterm.lua ./wezterm/wezterm.lua
+cp ~/.config/ghostty/config ./ghostty/config
