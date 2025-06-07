@@ -14,6 +14,8 @@ config.window_padding = {
   bottom = 0.5
 }
 
+config.font = wezterm.font('JetBrainsMono Nerd Font')
+
 -- config.background = {
 -- 	{
 -- 		source = { File = "Users/jeff/Pictures/wallpaper/Flow_Wallpaper_Mac.png" },

@@ -7,7 +7,7 @@ require('lazy').setup({
 
   require('jeffc25/plugins/treesitter'),
 
-  require('jeffc25/plugins/gitsigns'),
+  require('jeffc25/plugins/git'),
 
   require('jeffc25/plugins/which-key'),
 
@@ -27,16 +27,27 @@ require('lazy').setup({
 
   require('jeffc25/plugins/mini'),
 
+  require('jeffc25/plugins/lualine'),
+
   require('jeffc25/plugins/indent-guides'),
 
   require('jeffc25/plugins/oil'),
 
   require('jeffc25/plugins/session'),
 
-  require('jeffc25/plugins/leetcode'),
+  require('jeffc25/plugins/debugger'),
+
+  require('jeffc25/plugins/arrow'),
+
+  require('jeffc25/plugins/icons'),
+
+  -- require('jeffc25/plugins/bbq'),
+
+  -- require('jeffc25/plugins/leetcode'),
+
+  -- require('jeffc25/plugins/harpoon'),
 
   -- require('jeffc25/plugins/visual-multi'),
-  -- require('jeffc25/plugins/harpoon'),
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
@@ -55,7 +66,7 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-  install = { colorscheme = { 'catppuccin' } },
+  install = {},
 })
 
 -- vim: ts=2 sts=2 sw=2 et
