@@ -1,4 +1,4 @@
-theme = light:ayu_light,dark:ayu
+theme = light:ayu_light,dark:MaterialDarker
 maximize = true
 
 cursor-style = block
