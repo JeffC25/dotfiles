@@ -1,21 +1,24 @@
 return {
-  -- { 'JeffC25/season.nvim', opt = { terminal = true } },
-  { dir = '~/dev/nvim/season.nvim/', opt = { terminal = true } },
+  { 'JeffC25/season.nvim', opt = { terminal = true } },
+  -- { dir = '~/dev/nvim/season.nvim/', opt = { terminal = true } },
   { 'folke/tokyonight.nvim' },
+  { 'EdenEast/nightfox.nvim' },
   { 'Shatur/neovim-ayu', opt = { terminal = true } },
   { 'rose-pine/neovim', name = 'rose-pine' },
-  { 'navarasu/onedark.nvim' },
-  { 'nuvic/flexoki-nvim' },
-  { 'UtkarshVerma/molokai.nvim' },
+  { 'navarasu/onedark.nvim', opt = { style = 'darker' } },
+  -- { 'nuvic/flexoki-nvim' },
+  { 'kepano/flexoki-neovim', name = 'flexoki' },
+  { 'neanias/everforest-nvim' },
   { 'catppuccin/nvim', name = 'catppuccin' },
   { 'ellisonleao/gruvbox.nvim' },
   { 'loctvl842/monokai-pro.nvim' },
   { 'projekt0n/github-nvim-theme', name = 'github-theme' },
-  { 'rmehri01/onenord.nvim', opt = { theme = 'light' } },
-
+  { 'rmehri01/onenord.nvim' },
+  { 'shaunsingh/nord.nvim' },
+  { 'NLKNguyen/papercolor-theme' },
+  { 'rebelot/kanagawa.nvim' },
   {
     'zenbones-theme/zenbones.nvim',
-    priority = 1000,
     config = function()
       vim.g.zenbones_darken_comments = 45
       vim.cmd.background = 'light'
@@ -23,10 +26,12 @@ return {
   },
   {
     'marko-cerovac/material.nvim',
-    priority = 1000,
     config = function()
-      require('material').setup({ lualine_style = 'stealth' })
-      vim.g.material_style = 'darker'
+      require('material').setup({
+        lualine_style = 'stealth',
+        -- disable = { background = true },
+        high_visibility = { darker = true },
+      })
     end,
   },
 
@@ -40,7 +45,7 @@ return {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd.colors('material-darker')
+        vim.cmd.colors('nordfox')
       end,
       set_light_mode = function()
         vim.cmd.colors('season')

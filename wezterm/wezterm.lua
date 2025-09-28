@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 -- config.color_scheme = 'OneHalfDark'
-config.color_scheme = 'Monokai Pro (Gogh)'
+config.color_scheme = 'catppuccin-frappe'
 
 config.window_padding = {
   left = 32,
@@ -24,8 +24,8 @@ config.font = wezterm.font('JetBrainsMono Nerd Font')
 -- 	},
 -- }
 
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 100
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
 
 config.hide_tab_bar_if_only_one_tab = true
 

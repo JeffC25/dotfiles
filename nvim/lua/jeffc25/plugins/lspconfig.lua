@@ -23,8 +23,15 @@ return {
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- Status updates for LSP.
+      {
+        'j-hui/fidget.nvim',
+        opts = {
+          notification = {
+            window = { winblend = 0, align = 'top', normal_hl = 'Function' },
+          },
+        },
+      },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -140,8 +147,16 @@ return {
         ts_ls = {},
         tailwindcss = {},
         jsonls = {},
-        zls = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+        zls = {
+          settings = {
+            zls = {
+              {
+                enable_build_on_save = true,
+                build_on_save_step = 'check',
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
