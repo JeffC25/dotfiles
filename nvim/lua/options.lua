@@ -54,6 +54,24 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Highlight when yanking (copying) text
+-- See `:help vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
+
+-- Folds
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
+
 -- Update directory when launching
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()

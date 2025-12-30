@@ -38,7 +38,8 @@ return {
     },
     config = function()
       -- See `:help lsp-vs-treesitter`
-      local lspconfig = require('lspconfig')
+      local virtual_text_enabled = true
+      vim.diagnostic.config({ virtual_text = virtual_text_enabled })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -79,6 +80,16 @@ return {
 
           -- Go to declaration (not definition)
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+          -- Show diagnostics info for word under cursor
+          map('<leader>dw', vim.diagnostic.open_float, '[D]iagnostics for current [W]ord')
+
+          -- Show diagonstics info on same line
+          map('<leader>td', function()
+            virtual_text_enabled = not virtual_text_enabled
+            vim.diagnostic.config({ virtual_text = virtual_text_enabled })
+            print('Virtual Text ' .. (virtual_text_enabled and 'Enabled' or 'Disabled'))
+          end, 'LSP: [T]oggle inline [D]iagnostics')
 
           -- Following two autocommands used to highlight references of the
           -- word under cursor (when cursor rests there for a little while).
@@ -180,7 +191,6 @@ return {
       -- Press `g?` for help in Mason menu.
       --
       -- `mason` set up above: configure options in `dependencies` table for `nvim-lspconfig`.
-      --
       -- Add other tools here for Mason to install
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
@@ -203,8 +213,20 @@ return {
           end,
         },
       })
-      lspconfig.sourcekit.setup({
-        -- root_dir = lspconfig.util.root_pattern('.git', 'Package.swift', 'compile_commands.json'),
+
+      -- non-Mason LSPs
+      vim.lsp.config['sourcekit'] = {
+        cmd = { 'sourcekit-lsp' },
+        capabilities = capabilities,
+        root_dir = vim.fs.root(0, { 'Package.swift', '.git', 'compile_commands.json', 'buildServer.json' }),
+        filetypes = { 'swift', 'objective-c', 'objective-cpp' },
+      }
+
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'swift', 'objective-c', 'objective-cpp' },
+        callback = function()
+          vim.lsp.start(vim.lsp.config['sourcekit'])
+        end,
       })
     end,
   },

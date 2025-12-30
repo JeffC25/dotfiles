@@ -12,6 +12,7 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      numhl = true,
       on_attach = function(bufnr)
         local gitsigns = require('gitsigns')
 
@@ -55,12 +56,12 @@ return {
         map('n', '<leader>Gb', gitsigns.blame_line, { desc = 'git [b]lame line' })
         map('n', '<leader>GB', gitsigns.blame, { desc = 'git [b]lame buffer' })
         map('n', '<leader>Gd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
+        map('n', '<leader>Gg', gitsigns.preview_hunk_inline, { desc = 'git [T]oggle git show [d]eleted' })
         map('n', '<leader>GD', function()
           gitsigns.diffthis('@')
         end, { desc = 'git [D]iff against last commit' })
         -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
-        map('n', '<leader>td', gitsigns.toggle_deleted, { desc = '[T]oggle git show [d]eleted' })
+        map('n', '<leader>Gtb', gitsigns.toggle_current_line_blame, { desc = 'git [T]oggle git show [b]lame line' })
       end,
     },
   },

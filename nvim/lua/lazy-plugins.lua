@@ -19,6 +19,8 @@ require('lazy').setup({
 
   require('jeffc25/plugins/autopairs'),
 
+  require('jeffc25/plugins/autotag'),
+
   require('jeffc25/plugins/theme'),
 
   require('jeffc25/plugins/neo-tree'),
@@ -39,11 +41,15 @@ require('lazy').setup({
 
   require('jeffc25/plugins/arrow'),
 
-  -- require('jeffc25/plugins/harpoon'),
-
   require('jeffc25/plugins/icons'),
 
-  -- require('jeffc25/plugins/bbq'),
+  require('jeffc25/plugins/flash'),
+
+  require('jeffc25/plugins/xcode'),
+
+  -- require('jeffc25/plugins/ufo'),
+
+  -- require('jeffc25/plugins/harpoon'),
 
   -- require('jeffc25/plugins/leetcode'),
 

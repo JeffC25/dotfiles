@@ -1,7 +1,6 @@
-theme = "Nord"
+theme = "Sonokai"
 maximize = true
 
-cursor-style = block
 cursor-style-blink = true
 cursor-color = #86B300
 cursor-text = #FFFFFF
@@ -9,14 +8,44 @@ cursor-text = #FFFFFF
 macos-icon = blueprint
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
+macos-window-buttons = hidden
+window-decoration = false
 
 window-padding-x = 16
-window-padding-y = 8
+window-padding-y = 16,8
 window-inherit-working-directory = true
-window-padding-balance = true
 
-background-opacity = 0.85
+background-opacity = 1
 background-blur = 100
-unfocused-split-opacity = 0.8
+unfocused-split-opacity = 1
 
 mouse-hide-while-typing = true
+font-family = "JetBrains Mono"
+
+## cmd + number → send tmux prefix (Ctrl-b) then that number
+keybind = global:cmd+digit_0=text:\x00\x30
+keybind = global:cmd+digit_1=text:\x00\x31
+keybind = global:cmd+digit_2=text:\x00\x32
+keybind = global:cmd+digit_3=text:\x00\x33
+keybind = global:cmd+digit_4=text:\x00\x34
+keybind = global:cmd+digit_5=text:\x00\x35
+keybind = global:cmd+digit_6=text:\x00\x36
+keybind = global:cmd+digit_7=text:\x00\x37
+keybind = global:cmd+digit_8=text:\x00\x38
+keybind = global:cmd+digit_9=text:\x00\x39
+
+# new tmux window (Cmd+T)
+keybind = cmd+t=text:\x00c
+
+# vertical split (Cmd+D)
+keybind = cmd+d=text:\x00%
+
+# horizontal split (Cmd+Shift+D)
+keybind = cmd+shift+d=text:\x00"
+
+# close pane (Cmd+W)
+keybind = cmd+w=text:exit\n
+
+# detach tmux (Cmd+Shift+W)
+keybind = cmd+shift+w=text:\x00d
+
