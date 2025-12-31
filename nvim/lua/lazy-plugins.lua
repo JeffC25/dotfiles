@@ -3,6 +3,8 @@
 require('lazy').setup({
   'tpope/vim-sleuth',
 
+  require('jeffc25/plugins/tmux'),
+
   require('jeffc25/plugins/telescope'),
 
   require('jeffc25/plugins/treesitter'),

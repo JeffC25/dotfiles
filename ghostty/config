@@ -7,7 +7,7 @@ cursor-text = #FFFFFF
 
 macos-icon = blueprint
 macos-titlebar-proxy-icon = hidden
-macos-titlebar-style = tabs
+# macos-titlebar-style = tabs
 macos-window-buttons = hidden
 window-decoration = false
 
