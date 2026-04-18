@@ -1,61 +1,48 @@
 -- Configure and install plugins
 
 require('lazy').setup({
-  'tpope/vim-sleuth',
+  require('plugins.utils.vim-sleuth'),
 
-  require('jeffc25/plugins/tmux'),
+  require('plugins.debugger.debugger'),
 
-  require('jeffc25/plugins/telescope'),
+  require('plugins.git.gitsigns'),
+  require('plugins.git.vim-fugitive'),
 
-  require('jeffc25/plugins/treesitter'),
+  require('plugins.lang.go'),
+  require('plugins.lang.rust'),
+  require('plugins.lang.xcode'),
 
-  require('jeffc25/plugins/git'),
+  require('plugins.lsp.autopairs'),
+  require('plugins.lsp.blink'),
+  require('plugins.lsp.conform'),
+  require('plugins.lsp.lspconfig'),
 
-  require('jeffc25/plugins/which-key'),
+  require('plugins.nav.harpoon'),
+  require('plugins.nav.neo-tree'),
+  require('plugins.nav.oil'),
 
-  require('jeffc25/plugins/lspconfig'),
+  require('plugins.telescope.telescope'),
+  require('plugins.treesitter.treesitter'),
 
-  require('jeffc25/plugins/conform'),
+  require('plugins.ui.lualine'),
+  require('plugins.ui.theme'),
+  require('plugins.ui.todo-comments'),
+  require('plugins.ui.icons'),
+  require('plugins.ui.indent-guides'),
+  require('plugins.ui.twilight'),
+  require('plugins.ui.zen'),
 
-  require('jeffc25/plugins/cmp'),
+  require('plugins.utils.mini'),
+  require('plugins.utils.session'),
+  require('plugins.utils.tmux'),
+  require('plugins.utils.which-key'),
 
-  require('jeffc25/plugins/autopairs'),
-
-  require('jeffc25/plugins/autotag'),
-
-  require('jeffc25/plugins/theme'),
-
-  require('jeffc25/plugins/neo-tree'),
-
-  require('jeffc25/plugins/todo-comments'),
-
-  require('jeffc25/plugins/mini'),
-
-  require('jeffc25/plugins/lualine'),
-
-  require('jeffc25/plugins/indent-guides'),
-
-  require('jeffc25/plugins/oil'),
-
-  require('jeffc25/plugins/session'),
-
-  require('jeffc25/plugins/debugger'),
-
-  require('jeffc25/plugins/arrow'),
-
-  require('jeffc25/plugins/icons'),
-
-  require('jeffc25/plugins/flash'),
-
-  require('jeffc25/plugins/xcode'),
-
-  -- require('jeffc25/plugins/ufo'),
-
-  -- require('jeffc25/plugins/harpoon'),
-
-  -- require('jeffc25/plugins/leetcode'),
-
-  -- require('jeffc25/plugins/visual-multi'),
+  -- require('plugins.nav.flash'),
+  -- require('plugins.nav.arrow'),
+  -- require('plugins.lsp.cmp'),
+  -- require('plugins.misc.leetcode'),
+  -- require('plugins.utils.kitty'),
+  -- require('plugins.utils.visual-multi'),
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
