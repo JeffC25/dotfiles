@@ -1,10 +1,10 @@
 #!/bin/sh
 mkdir -p ~/.config/nvim
-cp -r ./nvim/** ~/.config/nvim/ 
+cp ./nvim/* ~/.config/nvim/ 
 
 mkdir -p ~/.config/ghostty
-cp -r ./ghostty/config ~/.config/ghostty/config
+cp ./ghostty/ ~/.config/ghostty/
 
-cp -r ./tmux/ ~/
+cp ./tmux/ ~/
 
-cp -r ./wezterm/ ~/ 
+cp ./wezterm/ ~/ 
