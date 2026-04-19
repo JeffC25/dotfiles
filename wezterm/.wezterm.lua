@@ -1,14 +1,20 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
 local act = wezterm.action
--- This is where you actually apply your config choices
 
--- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = 'OneHalfDark'
+config.color_scheme = 'catppuccin-frappe'
+
+config.window_padding = {
+  left = 32,
+  right = 32,
+  top = 1,
+  bottom = 0.5
+}
+
+config.font = wezterm.font('JetBrainsMono Nerd Font')
 
 -- config.background = {
 -- 	{
@@ -18,10 +24,26 @@ config.color_scheme = "Catppuccin Mocha"
 -- 	},
 -- }
 
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 100
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
 
 config.hide_tab_bar_if_only_one_tab = true
+
+config.use_fancy_tab_bar = false
+config.colors = {
+  tab_bar = {
+    background = '#2d2a2e',
+    active_tab = {
+      bg_color = '#89b4fa',
+      fg_color = '#11111b'
+    },
+    inactive_tab = {
+      bg_color = '#2d2a2e',
+      fg_color = '#cdd6f4'
+    }
+  }
+}
+config.tab_max_width = 32
 
 config.mouse_bindings = {
   -- Disable the default click behavior
@@ -85,5 +107,4 @@ config.keys = {
   },
 }
 
--- and finally, return the configuration to wezterm
 return config

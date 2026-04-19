@@ -1,5 +1,10 @@
 #!/bin/sh
+mkdir -p ~/.config/nvim
 cp -r ./nvim/** ~/.config/nvim/ 
-cp -r ./wezterm/wezterm.lua ~/.wezterm.lua 
+
+mkdir -p ~/.config/ghostty
 cp -r ./ghostty/config ~/.config/ghostty/config
-cp -r ./tmux/tmux.conf ~/.tmux.conf
+
+cp -r ./tmux/ ~/
+
+cp -r ./wezterm/ ~/ 
