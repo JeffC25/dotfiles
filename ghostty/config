@@ -56,5 +56,7 @@ keybind = cmd+w=text:exit\n
 keybind = cmd+shift+w=text:\x00d
 
 # shaders
-custom-shader = shaders/ghostty-cursor-trails/boo-cursor.glsl
+# custom-shader = shaders/ghostty-cursor-trails/boo-cursor.glsl
+# custom-shader = shaders/ghostty-cursor-shaders/cursor_tail.glsl
+custom-shader = shaders/ghostty-cursor-shaders/cursor_warp.glsl
 custom-shader-animation = always
