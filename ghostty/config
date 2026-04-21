@@ -3,9 +3,9 @@ maximize = true
 macos-option-as-alt = true
 
 cursor-style-blink = true
-# cursor-color = #86B300
-# cursor-text = #FFFFFF
-cursor-text = #86B300
+cursor-color = #86B300
+cursor-text = #FFFFFF
+# cursor-text = #86B300
 # cursor-style = bar
 
 macos-icon = official
